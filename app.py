@@ -11,6 +11,6 @@ db = SQLAlchemy(app)
 def index():
     db.session.execute("INSERT INTO visitors (time) VALUES (NOW())")
     db.session.commit()
-    result = db.session.execute("SELECT COUNT(*) FROM visitors")
+    result = db.session.execute("SELEC COUNT(*) FROM visitors")
     counter = result.fetchone()[0]
     return render_template("index.html", counter=counter)
